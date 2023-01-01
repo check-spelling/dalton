@@ -413,7 +413,7 @@ host-os-policy:
 #
 # server-config:   List of server configurations to use if address matches
 #   address:       List of ip addresses or networks for this block
-#   personalitiy:  List of personalities used by this block
+#   personality:  List of personalities used by this block
 #
 # Currently Available Personalities:
 #   Minimal

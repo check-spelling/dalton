@@ -1133,7 +1133,7 @@ app-layer:
       #
       # server-config:            List of server configurations to use if address matches
       #   address:                List of ip addresses or networks for this block
-      #   personalitiy:           List of personalities used by this block
+      #   personality:           List of personalities used by this block
       #   request-body-limit:     Limit reassembly of request body for inspection
       #                           by http_client_body & pcre /P option.
       #   response-body-limit:    Limit reassembly of response body for inspection

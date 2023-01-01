@@ -466,7 +466,7 @@ af-packet:
     defrag: yes
     # After Linux kernel 3.10 it is possible to activate the rollover option: if a socket is
     # full then kernel will send the packet on the next socket with room available. This option
-    # can minimize packet drop and increase the treated bandwith on single intensive flow.
+    # can minimize packet drop and increase the treated bandwidth on single intensive flow.
     #rollover: yes
     # To use the ring feature of AF_PACKET, set 'use-mmap' to yes
     use-mmap: yes

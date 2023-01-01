@@ -428,7 +428,7 @@ threading:
     - detect-cpu-set:
         cpu: [ "all" ]
         mode: "exclusive" # run detect threads in these cpus
-        # Use explicitely 3 threads and don't compute number by using
+        # Use explicitly 3 threads and don't compute number by using
         # detect-thread-ratio variable:
         # threads: 3
         prio:

@@ -28,7 +28,7 @@
 # packet size (MTU + hardware header) on your system.
 #default-packet-size: 1514
 
-# Set the order of alerts bassed on actions
+# Set the order of alerts based on actions
 # The default order is pass, drop, reject, alert
 action-order:
   - pass
@@ -71,7 +71,7 @@ outputs:
 
   # a line based log to used with pcap file study.
   # this module is dedicated to offline pcap parsing (empty output
-  # if used with an other kind of input). It can interoperate with
+  # if used with another kind of input). It can interoperate with
   # pcap parser like wireshark via the suriwire plugin.
   - pcap-info:
       enabled: no
@@ -132,7 +132,7 @@ outputs:
   # a line based alerts log similar to fast.log into syslog
   - syslog:
       enabled: no
-      # reported identity to syslog. If ommited the program name (usually
+      # reported identity to syslog. If omitted the program name (usually
       # suricata) will be used.
       #identity: "suricata"
       facility: local5
@@ -303,7 +303,7 @@ threading:
     - detect_cpu_set:
         cpu: [ "all" ]
         mode: "exclusive" # run detect threads in these cpus
-        # Use explicitely 3 threads and don't compute number by using
+        # Use explicitly 3 threads and don't compute number by using
         # detect_thread_ratio variable:
         # threads: 3
         prio:
@@ -352,7 +352,7 @@ cuda:
       # buffer within this timeout limit, we pass the currently filled buffer to the gpu.
       # All entries > 0 are valid.
       batching_timeout: 1
-      # Specifies whether to use page_locked memory whereever possible.  Accepted values
+      # Specifies whether to use page_locked memory wherever possible.  Accepted values
       # are "enabled" and "disabled".
       page_locked: enabled
       # The device to use for the mpm.  Currently we don't support load balancing
@@ -431,10 +431,10 @@ pattern-matcher:
 # emergency_recovery is the percentage of flows that the engine need to
 # prune before unsetting the emergency state. The emergency state is activated
 # when the memcap limit is reached, allowing to create new flows, but
-# prunning them with the emergency timeouts (they are defined below).
+# pruning them with the emergency timeouts (they are defined below).
 # If the memcap is reached, the engine will try to prune prune_flows
-# with the default timeouts. If it doens't find a flow to prune, it will set
-# the emergency bit and it will try again with more agressive timeouts.
+# with the default timeouts. If it doesn't find a flow to prune, it will set
+# the emergency bit and it will try again with more aggressive timeouts.
 # If that doesn't work, then it will try to kill the last time seen flows
 # not in use.
 # The memcap can be specified in kb, mb, gb.  Just a number indicates it's
@@ -449,7 +449,7 @@ flow:
 
 # Specific timeouts for flows. Here you can specify the timeouts that the
 # active flows will wait to transit from the current state to another, on each
-# protocol. The value of "new" determine the seconds to wait after a hanshake or
+# protocol. The value of "new" determine the seconds to wait after a handshake or
 # stream startup before the engine free the data of that flow it doesn't
 # change the state to established (usually if we don't receive more packets
 # of that flow). The value of "established" is the amount of
@@ -490,7 +490,7 @@ flow-timeouts:
     emergency_new: 10
     emergency_established: 100
 
-# Stream engine settings. Here the TCP stream tracking and reaasembly
+# Stream engine settings. Here the TCP stream tracking and reassembly
 # engine is configured.
 #
 # stream:
@@ -500,7 +500,7 @@ flow-timeouts:
 #                               # packet. If csum validation is specified as
 #                               # "yes", then packet with invalid csum will not
 #                               # be processed by the engine stream/app layer.
-#                               # Warning: locally generated trafic can be
+#                               # Warning: locally generated traffic can be
 #                               # generated without checksum due to hardware offload
 #                               # of checksum. You can control the handling of checksum
 #				# on a per-interface basis via the 'checksum-checks'
@@ -541,20 +541,20 @@ logging:
   # Note that debug level logging will only be emitted if Suricata was
   # compiled with the --enable-debug configure option.
   #
-  # This value is overriden by the SC_LOG_LEVEL env var.
+  # This value is overridden by the SC_LOG_LEVEL env var.
   default-log-level: info
 
   # The default output format.  Optional parameter, should default to
-  # something reasonable if not provided.  Can be overriden in an
+  # something reasonable if not provided.  Can be overridden in an
   # output section.  You can leave this out to get the default.
   #
-  # This value is overriden by the SC_LOG_FORMAT env var.
+  # This value is overridden by the SC_LOG_FORMAT env var.
   #default-log-format: "[%i] %t - (%f:%l) <%d> (%n) -- "
 
   # A regex to filter output.  Can be overridden in an output section.
   # Defaults to empty (no filter).
   #
-  # This value is overriden by the SC_LOG_OP_FILTER env var.
+  # This value is overridden by the SC_LOG_OP_FILTER env var.
   default-output-filter:
 
   # Define your logging outputs.  If none are defined, or they are all
@@ -799,7 +799,7 @@ asn1_max_frames: 256
 #
 # server-config:        List of server configurations to use if address matches
 #   address:            List of ip addresses or networks for this block
-#   personalitiy:       List of personalities used by this block
+#   personality:       List of personalities used by this block
 #   request-body-limit: Limit reassembly of request body for inspection
 #                       by http_client_body & pcre /P option.
 #

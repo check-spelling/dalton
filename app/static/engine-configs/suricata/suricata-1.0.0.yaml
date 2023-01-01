@@ -10,7 +10,7 @@
 # pattern matcher scans many packets in parallel.
 #max-pending-packets: 50
 
-# Set the order of alerts bassed on actions
+# Set the order of alerts based on actions
 # The default order is pass, drop, reject, alert
 action-order:
   - pass
@@ -171,10 +171,10 @@ pattern-matcher:
 # emergency_recovery is the percentage of flows that the engine need to
 # prune before unsetting the emergency state. The emergency state is activated
 # when the memcap limit is reached, allowing to create new flows, but
-# prunning them with the emergency timeouts (they are defined below).
+# pruning them with the emergency timeouts (they are defined below).
 # If the memcap is reached, the engine will try to prune prune_flows
-# with the default timeouts. If it doens't find a flow to prune, it will set
-# the emergency bit and it will try again with more agressive timeouts.
+# with the default timeouts. If it doesn't find a flow to prune, it will set
+# the emergency bit and it will try again with more aggressive timeouts.
 # If that doesn't work, then it will try to kill the last time seen flows
 # not in use.
 
@@ -187,7 +187,7 @@ flow:
 
 # Specific timeouts for flows. Here you can specify the timeouts that the
 # active flows will wait to transit from the current state to another, on each
-# protocol. The value of "new" determine the seconds to wait after a hanshake or
+# protocol. The value of "new" determine the seconds to wait after a handshake or
 # stream startup before the engine free the data of that flow it doesn't
 # change the state to established (usually if we don't receive more packets
 # of that flow). The value of "established" is the amount of
@@ -245,20 +245,20 @@ logging:
   # Note that debug level logging will only be emitted if Suricata was
   # compiled with the --enable-debug configure option.
   #
-  # This value is overriden by the SC_LOG_LEVEL env var.
+  # This value is overridden by the SC_LOG_LEVEL env var.
   default-log-level: info
 
   # The default output format.  Optional parameter, should default to
-  # something reasonable if not provided.  Can be overriden in an
+  # something reasonable if not provided.  Can be overridden in an
   # output section.  You can leave this out to get the default.
   #
-  # This value is overriden by the SC_LOG_FORMAT env var.
+  # This value is overridden by the SC_LOG_FORMAT env var.
   #default-log-format: "[%i] %t - (%f:%l) <%d> (%n) -- "
 
   # A regex to filter output.  Can be overridden in an output section.
   # Defaults to empty (no filter).
   #
-  # This value is overriden by the SC_LOG_OP_FILTER env var.
+  # This value is overridden by the SC_LOG_OP_FILTER env var.
   default-output-filter:
 
   # Define your logging outputs.  If none are defined, or they are all
@@ -457,7 +457,7 @@ host-os-policy:
 #
 # server-config:   List of server configurations to use if address matches
 #   address:       List of ip addresses or networks for this block
-#   personalitiy:  List of personalities used by this block
+#   personality:  List of personalities used by this block
 #
 # Currently Available Personalities:
 #   Minimal

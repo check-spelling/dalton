@@ -27,7 +27,7 @@
 # round-robin       - Flows assigned to threads in a round robin fashion.
 # active-packets    - Flows assigned to threads that have the lowest number of
 #                     unprocessed packets (default).
-# hash              - Flow alloted usihng the address hash. More of a random
+# hash              - Flow alloted using the address hash. More of a random
 #                     technique. Was the default in Suricata 1.2.1 and older.
 #
 #autofp-scheduler: active-packets
@@ -320,7 +320,7 @@ outputs:
   # a line based alerts log similar to fast.log into syslog
   - syslog:
       enabled: no
-      # reported identity to syslog. If ommited the program name (usually
+      # reported identity to syslog. If omitted the program name (usually
       # suricata) will be used.
       #identity: "suricata"
       facility: local5
@@ -465,14 +465,14 @@ af-packet:
     defrag: yes
     # After Linux kernel 3.10 it is possible to activate the rollover option: if a socket is
     # full then kernel will send the packet on the next socket with room available. This option
-    # can minimize packet drop and increase the treated bandwith on single intensive flow.
+    # can minimize packet drop and increase the treated bandwidth on single intensive flow.
     #rollover: yes
     # To use the ring feature of AF_PACKET, set 'use-mmap' to yes
     use-mmap: yes
     # Ring size will be computed with respect to max_pending_packets and number
     # of threads. You can set manually the ring size in number of packets by setting
     # the following value. If you are using flow cluster-type and have really network
-    # intensive single-flow you could want to set the ring-size independantly of the number
+    # intensive single-flow you could want to set the ring-size independently of the number
     # of threads:
     #ring-size: 2048
     # On busy system, this could help to set it to yes to recover from a packet drop
@@ -632,7 +632,7 @@ threading:
     - detect-cpu-set:
         cpu: [ "all" ]
         mode: "exclusive" # run detect threads in these cpus
-        # Use explicitely 3 threads and don't compute number by using
+        # Use explicitly 3 threads and don't compute number by using
         # detect-thread-ratio variable:
         # threads: 3
         prio:
@@ -775,10 +775,10 @@ defrag:
 # emergency-recovery is the percentage of flows that the engine need to
 # prune before unsetting the emergency state. The emergency state is activated
 # when the memcap limit is reached, allowing to create new flows, but
-# prunning them with the emergency timeouts (they are defined below).
+# pruning them with the emergency timeouts (they are defined below).
 # If the memcap is reached, the engine will try to prune flows
-# with the default timeouts. If it doens't find a flow to prune, it will set
-# the emergency bit and it will try again with more agressive timeouts.
+# with the default timeouts. If it doesn't find a flow to prune, it will set
+# the emergency bit and it will try again with more aggressive timeouts.
 # If that doesn't work, then it will try to kill the last time seen flows
 # not in use.
 # The memcap can be specified in kb, mb, gb.  Just a number indicates it's
@@ -801,7 +801,7 @@ vlan:
 
 # Specific timeouts for flows. Here you can specify the timeouts that the
 # active flows will wait to transit from the current state to another, on each
-# protocol. The value of "new" determine the seconds to wait after a hanshake or
+# protocol. The value of "new" determine the seconds to wait after a handshake or
 # stream startup before the engine free the data of that flow it doesn't
 # change the state to established (usually if we don't receive more packets
 # of that flow). The value of "established" is the amount of
@@ -852,7 +852,7 @@ flow-timeouts:
 #                               # packet. If csum validation is specified as
 #                               # "yes", then packet with invalid csum will not
 #                               # be processed by the engine stream/app layer.
-#                               # Warning: locally generated trafic can be
+#                               # Warning: locally generated traffic can be
 #                               # generated without checksum due to hardware offload
 #                               # of checksum. You can control the handling of checksum
 #                               # on a per-interface basis via the 'checksum-checks'
@@ -959,20 +959,20 @@ logging:
   # Note that debug level logging will only be emitted if Suricata was
   # compiled with the --enable-debug configure option.
   #
-  # This value is overriden by the SC_LOG_LEVEL env var.
+  # This value is overridden by the SC_LOG_LEVEL env var.
   default-log-level: notice
 
   # The default output format.  Optional parameter, should default to
-  # something reasonable if not provided.  Can be overriden in an
+  # something reasonable if not provided.  Can be overridden in an
   # output section.  You can leave this out to get the default.
   #
-  # This value is overriden by the SC_LOG_FORMAT env var.
+  # This value is overridden by the SC_LOG_FORMAT env var.
   #default-log-format: "[%i] %t - (%f:%l) <%d> (%n) -- "
 
   # A regex to filter output.  Can be overridden in an output section.
   # Defaults to empty (no filter).
   #
-  # This value is overriden by the SC_LOG_OP_FILTER env var.
+  # This value is overridden by the SC_LOG_OP_FILTER env var.
   default-output-filter:
 
   # Define your logging outputs.  If none are defined, or they are all
@@ -1058,7 +1058,7 @@ pfring:
 
 pcap:
   - interface: eth0
-    # On Linux, pcap will try to use mmaped capture and will use buffer-size
+    # On Linux, pcap will try to use mmapped capture and will use buffer-size
     # as total of memory used by the ring. So set this to something bigger
     # than 1% of your bandwidth.
     #buffer-size: 16777216
@@ -1232,7 +1232,7 @@ vars:
 
     MODBUS_PORTS: 502
 
-# Set the order of alerts bassed on actions
+# Set the order of alerts based on actions
 # The default order is pass, drop, reject, alert
 # action-order:
 #   - pass
@@ -1404,7 +1404,7 @@ app-layer:
       #
       # server-config:            List of server configurations to use if address matches
       #   address:                List of ip addresses or networks for this block
-      #   personalitiy:           List of personalities used by this block
+      #   personality:           List of personalities used by this block
       #   request-body-limit:     Limit reassembly of request body for inspection
       #                           by http_client_body & pcre /P option.
       #   response-body-limit:    Limit reassembly of response body for inspection
@@ -1467,7 +1467,7 @@ app-layer:
            # detection change between runs. It is set to 'yes' by default.
            #randomize-inspection-sizes: yes
            # If randomize-inspection-sizes is active, the value of various
-           # inspection size will be choosen in the [1 - range%, 1 + range%]
+           # inspection size will be chosen in the [1 - range%, 1 + range%]
            # range
            # Default value of randomize-inspection-range is 10.
            #randomize-inspection-range: 10

@@ -1081,7 +1081,7 @@ flow-timeouts:
 #                               # packet. If csum validation is specified as
 #                               # "yes", then packet with invalid csum will not
 #                               # be processed by the engine stream/app layer.
-#                               # Warning: locally generated trafic can be
+#                               # Warning: locally generated traffic can be
 #                               # generated without checksum due to hardware offload
 #                               # of checksum. You can control the handling of checksum
 #                               # on a per-interface basis via the 'checksum-checks'

@@ -599,7 +599,7 @@ defrag:
 # prunning them with the emergency timeouts (they are defined below).
 # If the memcap is reached, the engine will try to prune flows
 # with the default timeouts. If it doens't find a flow to prune, it will set
-# the emergency bit and it will try again with more agressive timeouts.
+# the emergency bit and it will try again with more aggressive timeouts.
 # If that doesn't work, then it will try to kill the last time seen flows
 # not in use.
 # The memcap can be specified in kb, mb, gb.  Just a number indicates it's

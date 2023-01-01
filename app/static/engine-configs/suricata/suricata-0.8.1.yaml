@@ -194,7 +194,7 @@ logging:
   default-log-level: info
 
   # The default output format.  Optional parameter, should default to
-  # something reasonable if not provided.  Can be overriden in an
+  # something reasonable if not provided.  Can be overridden in an
   # output section.  You can leave this out to get the default.
   #default-log-format: "[%i] %t - (%f:%l) <%d> (%n) -- "
 

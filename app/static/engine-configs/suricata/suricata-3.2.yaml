@@ -936,7 +936,7 @@ host-mode: auto
 # round-robin       - Flows assigned to threads in a round robin fashion.
 # active-packets    - Flows assigned to threads that have the lowest number of
 #                     unprocessed packets (default).
-# hash              - Flow alloted usihng the address hash. More of a random
+# hash              - Flow alloted using the address hash. More of a random
 #                     technique. Was the default in Suricata 1.2.1 and older.
 #
 #autofp-scheduler: active-packets

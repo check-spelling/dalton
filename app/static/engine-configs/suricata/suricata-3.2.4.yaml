@@ -1683,7 +1683,7 @@ mpipe:
     size16384: 0
 
 ##
-## Hardware accelaration
+## Hardware acceleration
 ##
 
 # Cuda configuration.

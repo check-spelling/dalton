@@ -187,7 +187,7 @@ flow:
 
 # Specific timeouts for flows. Here you can specify the timeouts that the
 # active flows will wait to transit from the current state to another, on each
-# protocol. The value of "new" determine the seconds to wait after a hanshake or
+# protocol. The value of "new" determine the seconds to wait after a handshake or
 # stream startup before the engine free the data of that flow it doesn't
 # change the state to established (usually if we don't receive more packets
 # of that flow). The value of "established" is the amount of

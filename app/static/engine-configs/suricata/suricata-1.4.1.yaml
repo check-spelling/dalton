@@ -413,7 +413,7 @@ cuda:
       # buffer within this timeout limit, we pass the currently filled buffer to the gpu.
       # All entries > 0 are valid.
       batching-timeout: 1
-      # Specifies whether to use page-locked memory whereever possible.  Accepted values
+      # Specifies whether to use page-locked memory wherever possible.  Accepted values
       # are "enabled" and "disabled".
       page-locked: enabled
       # The device to use for the mpm.  Currently we don't support load balancing

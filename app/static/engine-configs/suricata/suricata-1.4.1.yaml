@@ -255,7 +255,7 @@ af-packet:
     # Ring size will be computed with respect to max_pending_packets and number
     # of threads. You can set manually the ring size in number of packets by setting
     # the following value. If you are using flow cluster-type and have really network
-    # intensive single-flow you could want to set the ring-size independantly of the number
+    # intensive single-flow you could want to set the ring-size independently of the number
     # of threads:
     #ring-size: 2048
     # On busy system, this could help to set it to yes to recover from a packet drop

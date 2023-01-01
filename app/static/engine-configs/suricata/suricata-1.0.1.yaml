@@ -179,7 +179,7 @@ pattern-matcher:
 # when the memcap limit is reached, allowing to create new flows, but
 # prunning them with the emergency timeouts (they are defined below).
 # If the memcap is reached, the engine will try to prune prune_flows
-# with the default timeouts. If it doens't find a flow to prune, it will set
+# with the default timeouts. If it doesn't find a flow to prune, it will set
 # the emergency bit and it will try again with more aggressive timeouts.
 # If that doesn't work, then it will try to kill the last time seen flows
 # not in use.

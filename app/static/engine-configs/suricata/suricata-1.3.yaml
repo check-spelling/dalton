@@ -763,7 +763,7 @@ vars:
     FTP_PORTS: 21
 
 
-# Set the order of alerts bassed on actions
+# Set the order of alerts based on actions
 # The default order is pass, drop, reject, alert
 action-order:
   - pass
